@@ -15,6 +15,7 @@
 		D30399652445673900F23F9A /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30399642445673900F23F9A /* ArticleCell.swift */; };
 		D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996624456B8100F23F9A /* ArticleNewsViewController.swift */; };
 		D303996924456C4000F23F9A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996824456C4000F23F9A /* Article.swift */; };
+		D303996D2445B1AD00F23F9A /* WebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996C2445B1AD00F23F9A /* WebArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D30399642445673900F23F9A /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		D303996624456B8100F23F9A /* ArticleNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNewsViewController.swift; sourceTree = "<group>"; };
 		D303996824456C4000F23F9A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D303996C2445B1AD00F23F9A /* WebArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				D3039950244557D000F23F9A /* AppDelegate.swift */,
 				D3039952244557D000F23F9A /* SceneDelegate.swift */,
 				D303996624456B8100F23F9A /* ArticleNewsViewController.swift */,
+				D303996C2445B1AD00F23F9A /* WebArticleViewController.swift */,
 				D30399642445673900F23F9A /* ArticleCell.swift */,
 				D303996824456C4000F23F9A /* Article.swift */,
 				D3039956244557D000F23F9A /* Main.storyboard */,
@@ -148,6 +151,7 @@
 				D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */,
 				D303996924456C4000F23F9A /* Article.swift in Sources */,
 				D3039951244557D000F23F9A /* AppDelegate.swift in Sources */,
+				D303996D2445B1AD00F23F9A /* WebArticleViewController.swift in Sources */,
 				D3039953244557D000F23F9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

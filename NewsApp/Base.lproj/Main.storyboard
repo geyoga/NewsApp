@@ -100,11 +100,43 @@
                     <navigationItem key="navigationItem" title="News" id="f2J-6C-n5d"/>
                     <connections>
                         <outlet property="tableView" destination="Nkl-cI-Rh4" id="RNU-nl-8fI"/>
+                        <segue destination="Lqd-fV-v0L" kind="show" identifier="goToWeb" id="4Vp-ZC-fHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="132.58928571428572"/>
+        </scene>
+        <!--Web Article View Controller-->
+        <scene sceneID="0sz-u8-95f">
+            <objects>
+                <viewController storyboardIdentifier="web" modalPresentationStyle="fullScreen" id="Lqd-fV-v0L" customClass="WebArticleViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mjd-XC-3jg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXX-EF-23A">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WXX-EF-23A" firstAttribute="top" secondItem="9AB-sx-xIH" secondAttribute="top" id="8Wn-kE-WLC"/>
+                            <constraint firstItem="9AB-sx-xIH" firstAttribute="bottom" secondItem="WXX-EF-23A" secondAttribute="bottom" id="dLC-Ew-xqo"/>
+                            <constraint firstItem="9AB-sx-xIH" firstAttribute="trailing" secondItem="WXX-EF-23A" secondAttribute="trailing" id="vqy-nO-lsb"/>
+                            <constraint firstItem="WXX-EF-23A" firstAttribute="leading" secondItem="9AB-sx-xIH" secondAttribute="leading" id="yzD-vG-yiw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9AB-sx-xIH"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="p0j-dN-KVQ"/>
+                    <connections>
+                        <outlet property="webView" destination="WXX-EF-23A" id="ZmO-sc-VBJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUN-Yl-RBD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805.7971014492755" y="134.59821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ler-7V-gl2">

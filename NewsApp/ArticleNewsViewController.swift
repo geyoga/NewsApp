@@ -24,23 +24,23 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
     }
     
     func setupTableView (){
-           tableView.delegate = self
-           tableView.dataSource = self
-           tableView.allowsSelectionDuringEditing = false
-           tableView.allowsSelection = true
-           tableView.showsVerticalScrollIndicator = false
-           self.tableView.separatorStyle = .none
-       }
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelectionDuringEditing = false
+        tableView.allowsSelection = true
+        tableView.showsVerticalScrollIndicator = false
+        self.tableView.separatorStyle = .none
+    }
     
     func setupNavBar(){
-            navigationController?.navigationBar.prefersLargeTitles = true
-            navigationItem.hidesSearchBarWhenScrolling = false
-            
-            let searchController = UISearchController(searchResultsController: nil)
-            navigationItem.searchController = searchController
-
-            searchController.searchBar.delegate = self
-            searchController.obscuresBackgroundDuringPresentation = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
     }
     
     func getAllArticle(){
@@ -73,7 +73,7 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
                             article.newsUrl = url
                             article.imageUrl = imageUrl
                             self.listImgUrl.append(imageUrl)
-                            print(self.listImgUrl)
+                            //print(self.listImgUrl)
                         }
                         self.listArticle?.append(article)
                     }
@@ -104,6 +104,8 @@ extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate
         cell.authorNewsLabel.text = self.listArticle?[indexPath.item].author
         cell.titleNewsLabel.text = self.listArticle?[indexPath.item].titleHeadline
         cell.descNewsLabel.text = self.listArticle?[indexPath.item].desc
+        
+        
         //cell.newsImageView.downloadImage(from: (self.listArticle?[indexPath.item].imageUrl!)!)
         
         if let imageURL = URL(string: listImgUrl[indexPath.item]){
@@ -119,6 +121,16 @@ extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate
         }
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "goToWeb", sender: self.listArticle?[indexPath.item].newsUrl)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let webVC = segue.destination as! WebArticleViewController
+        webVC.url = sender as? String
     }
 }
 
