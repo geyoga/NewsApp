@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
 
@@ -70,16 +71,21 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
                             article.author = author
                             article.titleHeadline = title
                             article.desc = desc
-                            article.newsUrl = url
                             article.imageUrl = imageUrl
+                            article.newsUrl = url
                             self.listImgUrl.append(imageUrl)
                             //print(self.listImgUrl)
                         }
-                        self.listArticle?.append(article)
+                        if article.imageUrl != nil {
+                            self.listArticle?.append(article)
+                        }
                     }
                 }
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    print(self.listArticle?.count)
+                    print(self.listArticle?[3].imageUrl)
+                    print(self.listImgUrl.count)
                 }
                 
             }catch let error{
@@ -93,8 +99,8 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
 
 extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.listArticle?.count ?? 0
-        return self.listImgUrl.count
+        return self.listArticle?.count ?? 0
+        //return self.listImgUrl.count
        // return 2
     }
     
@@ -105,20 +111,8 @@ extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate
         cell.titleNewsLabel.text = self.listArticle?[indexPath.item].titleHeadline
         cell.descNewsLabel.text = self.listArticle?[indexPath.item].desc
         
-        
-        //cell.newsImageView.downloadImage(from: (self.listArticle?[indexPath.item].imageUrl!)!)
-        
-        if let imageURL = URL(string: listImgUrl[indexPath.item]){
-            DispatchQueue.global().async {
-                let data = try? Data(contentsOf: imageURL)
-                if let data = data {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        cell.newsImageView.image = image
-                    }
-                }
-            }
-        }
+        let resource = ImageResource(downloadURL: URL(string: listImgUrl[indexPath.row])!, cacheKey: listImgUrl[indexPath.row])
+        cell.newsImageView.kf.setImage(with: resource)
 
         return cell
     }
@@ -134,23 +128,3 @@ extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate
     }
 }
 
-extension UIImageView{
-    
-    func downloadImage(from url: String){
-        
-        let urlRequest = URLRequest(url: URL(string: url)!)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data!)
-            }
-        }
-        task.resume()
-    }
-}
