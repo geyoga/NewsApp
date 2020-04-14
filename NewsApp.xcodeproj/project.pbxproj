@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		D3039951244557D000F23F9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3039950244557D000F23F9A /* AppDelegate.swift */; };
 		D3039953244557D000F23F9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3039952244557D000F23F9A /* SceneDelegate.swift */; };
-		D3039955244557D000F23F9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3039954244557D000F23F9A /* ViewController.swift */; };
 		D3039958244557D000F23F9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3039956244557D000F23F9A /* Main.storyboard */; };
 		D303995A244557D200F23F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3039959244557D200F23F9A /* Assets.xcassets */; };
 		D303995D244557D200F23F9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D303995B244557D200F23F9A /* LaunchScreen.storyboard */; };
+		D30399652445673900F23F9A /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30399642445673900F23F9A /* ArticleCell.swift */; };
+		D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996624456B8100F23F9A /* ArticleNewsViewController.swift */; };
+		D303996924456C4000F23F9A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996824456C4000F23F9A /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D303994D244557D000F23F9A /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3039950244557D000F23F9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3039952244557D000F23F9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3039954244557D000F23F9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3039957244557D000F23F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3039959244557D200F23F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D303995C244557D200F23F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D303995E244557D200F23F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30399642445673900F23F9A /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		D303996624456B8100F23F9A /* ArticleNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNewsViewController.swift; sourceTree = "<group>"; };
+		D303996824456C4000F23F9A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			children = (
 				D3039950244557D000F23F9A /* AppDelegate.swift */,
 				D3039952244557D000F23F9A /* SceneDelegate.swift */,
-				D3039954244557D000F23F9A /* ViewController.swift */,
+				D303996624456B8100F23F9A /* ArticleNewsViewController.swift */,
+				D30399642445673900F23F9A /* ArticleCell.swift */,
+				D303996824456C4000F23F9A /* Article.swift */,
 				D3039956244557D000F23F9A /* Main.storyboard */,
 				D3039959244557D200F23F9A /* Assets.xcassets */,
 				D303995B244557D200F23F9A /* LaunchScreen.storyboard */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3039955244557D000F23F9A /* ViewController.swift in Sources */,
+				D30399652445673900F23F9A /* ArticleCell.swift in Sources */,
+				D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */,
+				D303996924456C4000F23F9A /* Article.swift in Sources */,
 				D3039951244557D000F23F9A /* AppDelegate.swift in Sources */,
 				D3039953244557D000F23F9A /* SceneDelegate.swift in Sources */,
 			);

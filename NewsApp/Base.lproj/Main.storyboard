@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eUJ-Fo-PAG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--News-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ArticleNewsViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nkl-cI-Rh4">
+                                <rect key="frame" x="20" y="96" width="374" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" rowHeight="185" id="VAw-1E-TsL" customClass="ArticleCell" customModule="NewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="185"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VAw-1E-TsL" id="t1P-lq-T4s">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="185"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bGU-kH-Im2">
+                                                    <rect key="frame" x="244" y="27.5" width="130" height="130"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="1vP-N9-dJb"/>
+                                                        <constraint firstAttribute="height" constant="130" id="ufP-NF-tHC"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular apps download and revenue take a hit in India as people stay home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4K-zS-pxu">
+                                                    <rect key="frame" x="0.0" y="27.5" width="236" height="57.5"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebk-RF-xoD">
+                                                    <rect key="frame" x="0.0" y="93" width="236" height="28"/>
+                                                    <string key="text">The coronavirus pandemic, which has forced billions of people to stay home, has led to a surge in new downloads of several consumer and enterprise focused apps in the west. But in India, the biggest open market globally, things have taken a slightly different…</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manish Singh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-tB-OHv">
+                                                    <rect key="frame" x="0.0" y="156" width="73" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ebk-RF-xoD" firstAttribute="top" secondItem="w4K-zS-pxu" secondAttribute="bottom" constant="8" id="2k2-RK-saR"/>
+                                                <constraint firstItem="bGU-kH-Im2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DrN-tB-OHv" secondAttribute="trailing" constant="8" symbolic="YES" id="6Ff-GA-pgD"/>
+                                                <constraint firstItem="w4K-zS-pxu" firstAttribute="top" secondItem="bGU-kH-Im2" secondAttribute="top" id="A9k-YU-kkB"/>
+                                                <constraint firstItem="ebk-RF-xoD" firstAttribute="leading" secondItem="t1P-lq-T4s" secondAttribute="leading" id="FWM-5V-gYR"/>
+                                                <constraint firstAttribute="trailing" secondItem="bGU-kH-Im2" secondAttribute="trailing" id="GiM-i0-KfD"/>
+                                                <constraint firstAttribute="bottom" secondItem="DrN-tB-OHv" secondAttribute="bottom" constant="15" id="M1A-zo-MJT"/>
+                                                <constraint firstItem="bGU-kH-Im2" firstAttribute="leading" secondItem="w4K-zS-pxu" secondAttribute="trailing" constant="8" id="PD6-6P-reQ"/>
+                                                <constraint firstItem="bGU-kH-Im2" firstAttribute="leading" secondItem="ebk-RF-xoD" secondAttribute="trailing" constant="8" id="cW0-T7-AyV"/>
+                                                <constraint firstItem="bGU-kH-Im2" firstAttribute="centerY" secondItem="t1P-lq-T4s" secondAttribute="centerY" id="dJE-QA-g5z"/>
+                                                <constraint firstItem="DrN-tB-OHv" firstAttribute="leading" secondItem="t1P-lq-T4s" secondAttribute="leading" id="h6h-ah-npr"/>
+                                                <constraint firstItem="DrN-tB-OHv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ebk-RF-xoD" secondAttribute="bottom" constant="21" id="r1X-nL-2Te"/>
+                                                <constraint firstItem="w4K-zS-pxu" firstAttribute="leading" secondItem="t1P-lq-T4s" secondAttribute="leading" id="xK6-7H-BQj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorNewsLabel" destination="DrN-tB-OHv" id="iQZ-9x-QxT"/>
+                                            <outlet property="descNewsLabel" destination="ebk-RF-xoD" id="yfU-w6-zTr"/>
+                                            <outlet property="newsImageView" destination="bGU-kH-Im2" id="ogi-51-lXL"/>
+                                            <outlet property="titleNewsLabel" destination="w4K-zS-pxu" id="dAo-qe-nS4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="f1N-pS-QF2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="48c-j0-mIg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nkl-cI-Rh4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9eF-g1-tme"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nkl-cI-Rh4" secondAttribute="trailing" constant="20" id="RSw-ua-L7k"/>
+                            <constraint firstItem="Nkl-cI-Rh4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cXm-7v-pqe"/>
+                            <constraint firstItem="Nkl-cI-Rh4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="mSA-Pa-tvW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="News" id="f2J-6C-n5d"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nkl-cI-Rh4" id="RNU-nl-8fI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ler-7V-gl2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eUJ-Fo-PAG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0Oj-Cj-nRK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fbr-FU-FeC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bWr-hF-Zxl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
         </scene>
     </scenes>
 </document>
