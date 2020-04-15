@@ -14,12 +14,13 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     var listArticle : [Article]? = []
     var listImgUrl : [String] = []
+    var source : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupNavBar()
-        getAllArticle()
+        getAllArticle(from: source ?? "")
         
         // Do any additional setup after loading the view.
     }
@@ -44,9 +45,9 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
-    func getAllArticle(){
+    func getAllArticle(from sources : String){
         
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?country=id&apiKey=c9b8c8c688934343b40585494e787afd")!)
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/top-headlines?sources=\(sources)&apiKey=c9b8c8c688934343b40585494e787afd")!)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             
@@ -84,7 +85,7 @@ class ArticleNewsViewController: UIViewController, UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     print(self.listArticle?.count)
-                    print(self.listArticle?[3].imageUrl)
+//                    print(self.listArticle?[3].imageUrl)
                     print(self.listImgUrl.count)
                 }
                 

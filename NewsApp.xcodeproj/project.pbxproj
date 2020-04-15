@@ -17,6 +17,9 @@
 		D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996624456B8100F23F9A /* ArticleNewsViewController.swift */; };
 		D303996924456C4000F23F9A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996824456C4000F23F9A /* Article.swift */; };
 		D303996D2445B1AD00F23F9A /* WebArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303996C2445B1AD00F23F9A /* WebArticleViewController.swift */; };
+		D303997A2446B1C000F23F9A /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30399792446B1C000F23F9A /* SourceCell.swift */; };
+		D303997D2446B48900F23F9A /* SourceNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303997C2446B48900F23F9A /* SourceNewsViewController.swift */; };
+		D30399802446BA7C00F23F9A /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = D303997F2446BA7C00F23F9A /* Source.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		D303996624456B8100F23F9A /* ArticleNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleNewsViewController.swift; sourceTree = "<group>"; };
 		D303996824456C4000F23F9A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		D303996C2445B1AD00F23F9A /* WebArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebArticleViewController.swift; sourceTree = "<group>"; };
+		D30399792446B1C000F23F9A /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
+		D303997C2446B48900F23F9A /* SourceNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceNewsViewController.swift; sourceTree = "<group>"; };
+		D303997F2446BA7C00F23F9A /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		D30399702445C4E800F23F9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D303997624469C8D00F23F9A /* Source */,
 				D30399742445C51D00F23F9A /* Article */,
 			);
 			path = Model;
@@ -110,6 +117,7 @@
 		D30399712445C4EE00F23F9A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D303997B2446B1C700F23F9A /* Source */,
 				D30399752445C53100F23F9A /* Article */,
 			);
 			path = View;
@@ -118,6 +126,7 @@
 		D30399722445C4F300F23F9A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D303997E2446B48F00F23F9A /* Source */,
 				D30399732445C4FD00F23F9A /* Article */,
 			);
 			path = Controller;
@@ -146,6 +155,30 @@
 				D30399642445673900F23F9A /* ArticleCell.swift */,
 			);
 			path = Article;
+			sourceTree = "<group>";
+		};
+		D303997624469C8D00F23F9A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D303997F2446BA7C00F23F9A /* Source.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D303997B2446B1C700F23F9A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D30399792446B1C000F23F9A /* SourceCell.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D303997E2446B48F00F23F9A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D303997C2446B48900F23F9A /* SourceNewsViewController.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +299,11 @@
 				D30399652445673900F23F9A /* ArticleCell.swift in Sources */,
 				D303996724456B8100F23F9A /* ArticleNewsViewController.swift in Sources */,
 				D303996924456C4000F23F9A /* Article.swift in Sources */,
+				D303997A2446B1C000F23F9A /* SourceCell.swift in Sources */,
 				D3039951244557D000F23F9A /* AppDelegate.swift in Sources */,
+				D30399802446BA7C00F23F9A /* Source.swift in Sources */,
 				D303996D2445B1AD00F23F9A /* WebArticleViewController.swift in Sources */,
+				D303997D2446B48900F23F9A /* SourceNewsViewController.swift in Sources */,
 				D3039953244557D000F23F9A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
