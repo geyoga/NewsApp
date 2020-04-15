@@ -94,9 +94,6 @@ extension ArticleNewsViewController : UITableViewDataSource, UITableViewDelegate
             cell.newsImageView.kf.indicatorType = .activity
             cell.newsImageView.kf.setImage(with: resource)
         }
-        
-        
-
         return cell
     }
     

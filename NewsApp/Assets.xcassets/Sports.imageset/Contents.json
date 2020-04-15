@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Tech.png",
+      "filename" : "Sports.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Tech@2x.png",
+      "filename" : "Sports@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Tech@3x.png",
+      "filename" : "Sports@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -34,6 +34,7 @@ class SourceNewsViewController: UIViewController {
        }
     func setupNavBar(){
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = categoryNews?.capitalized
         navigationItem.hidesSearchBarWhenScrolling = false
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController

@@ -16,17 +16,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faB-hN-bDx">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="faB-hN-bDx">
                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="10"/>
+                                <integer key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkK-1c-svd">
-                        <rect key="frame" x="0.0" y="67" width="160" height="26.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkK-1c-svd">
+                        <rect key="frame" x="10" y="127" width="150" height="27"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -38,8 +38,8 @@
                 <constraint firstAttribute="bottom" secondItem="faB-hN-bDx" secondAttribute="bottom" id="5Hp-Xf-WKa"/>
                 <constraint firstItem="faB-hN-bDx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SgB-4d-4vI"/>
                 <constraint firstAttribute="trailing" secondItem="faB-hN-bDx" secondAttribute="trailing" id="kGP-kP-okR"/>
-                <constraint firstItem="mkK-1c-svd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="owH-6i-18s"/>
-                <constraint firstItem="mkK-1c-svd" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="pI5-9U-kLB"/>
+                <constraint firstItem="mkK-1c-svd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="owH-6i-18s"/>
+                <constraint firstItem="mkK-1c-svd" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="60.5" id="pI5-9U-kLB"/>
                 <constraint firstAttribute="trailing" secondItem="mkK-1c-svd" secondAttribute="trailing" id="uNE-2N-2ht"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

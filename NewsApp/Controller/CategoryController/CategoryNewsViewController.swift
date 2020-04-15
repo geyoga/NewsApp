@@ -12,17 +12,17 @@ class CategoryNewsViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var estimateWidth = 160.0
-    var cellMarginSize = 16.0
+    var cellMarginSize = 8.0
     var categories : [Category] = []
     
-    let cat1 = Category(id: "all", name: "All", backgroundImage: UIImage(named: "tech")!)
-    let cat2 = Category(id: "technology", name: "Technology", backgroundImage: UIImage(named: "tech")!)
-    let cat3 = Category(id: "business", name: "Business", backgroundImage: UIImage(named: "tech")!)
-    let cat4 = Category(id: "entertainment", name: "Entertainment", backgroundImage: UIImage(named: "tech")!)
-    let cat5 = Category(id: "general", name: "General", backgroundImage: UIImage(named: "tech")!)
-    let cat6 = Category(id: "health", name: "Health", backgroundImage: UIImage(named: "tech")!)
-    let cat7 = Category(id: "science", name: "Science", backgroundImage: UIImage(named: "tech")!)
-    let cat8 = Category(id: "sports", name: "Sports", backgroundImage: UIImage(named: "tech")!)
+    let cat1 = Category(id: "all", name: "All", backgroundImage: UIImage(named: "All")!)
+    let cat2 = Category(id: "technology", name: "Technology", backgroundImage: UIImage(named: "Tech")!)
+    let cat3 = Category(id: "business", name: "Business", backgroundImage: UIImage(named: "Business")!)
+    let cat4 = Category(id: "entertainment", name: "Entertainment", backgroundImage: UIImage(named: "Entertainment")!)
+    let cat5 = Category(id: "general", name: "General", backgroundImage: UIImage(named: "General")!)
+    let cat6 = Category(id: "health", name: "Health", backgroundImage: UIImage(named: "Health")!)
+    let cat7 = Category(id: "science", name: "Science", backgroundImage: UIImage(named: "Science")!)
+    let cat8 = Category(id: "sports", name: "Sports", backgroundImage: UIImage(named: "Sports")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
