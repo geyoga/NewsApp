@@ -12,13 +12,18 @@ class SourceNewsViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var sources = [Source]()
+    
+    var categoryNews : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
         setupTableView()
-        getAllSource()
+        getAllSource(from: categoryNews!)
         // Do any additional setup after loading the view.
     }
+    
+    
     func setupTableView (){
         tableView.delegate = self
         tableView.dataSource = self
@@ -38,9 +43,15 @@ class SourceNewsViewController: UIViewController, UISearchBarDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
-    func getAllSource(){
+    func getAllSource(from category : String){
         
-        let urlRequest = URL(string: "https://newsapi.org/v2/sources?apiKey=c9b8c8c688934343b40585494e787afd")
+        var urlRequest = URL(string: "")
+        if category.contains("all"){
+            urlRequest = URL(string: "https://newsapi.org/v2/sources?apiKey=c9b8c8c688934343b40585494e787afd")
+        }else{
+            urlRequest = URL(string: "https://newsapi.org/v2/sources?category=\(category)&apiKey=c9b8c8c688934343b40585494e787afd")
+        }
+        
         
         guard let downloadURL = urlRequest else {return}
         
