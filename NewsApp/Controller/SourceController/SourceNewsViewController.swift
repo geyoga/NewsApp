@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SourceNewsViewController: UIViewController, UISearchBarDelegate {
+class SourceNewsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var sources = [Source]()
-    
+    var currentSources = [Source]()
     var categoryNews : String?
     
     override func viewDidLoad() {
@@ -35,10 +35,8 @@ class SourceNewsViewController: UIViewController, UISearchBarDelegate {
     func setupNavBar(){
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = false
-        
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
-        
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
     }
@@ -65,6 +63,7 @@ class SourceNewsViewController: UIViewController, UISearchBarDelegate {
                 let decoder = JSONDecoder()
                 let downloadedSources = try decoder.decode(Sources.self, from: data)
                 self.sources = downloadedSources.sources
+                self.currentSources = self.sources
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -77,26 +76,46 @@ class SourceNewsViewController: UIViewController, UISearchBarDelegate {
 
 extension SourceNewsViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sources.count
+        return currentSources.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "sourceCell", for: indexPath) as! SourceCell
-        cell.sourceLabel.text = sources[indexPath.row].name
-        cell.descLabel.text = sources[indexPath.row].description
+        cell.sourceLabel.text = currentSources[indexPath.row].name
+        cell.descLabel.text = currentSources[indexPath.row].description
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "goToArticle", sender: self.sources[indexPath.row].id)
+        performSegue(withIdentifier: "goToArticle", sender: self.currentSources[indexPath.row].id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let articleVC = segue.destination as! ArticleNewsViewController
         articleVC.source = sender as? String
     }
+}
+
+extension SourceNewsViewController : UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
+            currentSources = sources
+            tableView.reloadData()
+            return
+        }
+        currentSources = sources.filter({ (source ) -> Bool in
+            return source.name!.lowercased().contains(searchText.lowercased() )
+        })
+        tableView.reloadData()
+    }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        currentSources = sources
+        tableView.reloadData()
+    }
+
 }

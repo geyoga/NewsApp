@@ -8,13 +8,29 @@
 
 import UIKit
 
-class Article: NSObject {
+class Articles : Codable {
     
-    var titleHeadline : String?
-    var desc : String?
-    var author : String?
-    var imageUrl : String?
-    var newsUrl : String?
+    let articles : [Article]
     
+    init(articles : [Article]) {
+        self.articles = articles
+    }
+}
 
+
+class Article: Codable {
+    
+    var title : String?
+    var description : String?
+    var author : String?
+    var urlToImage : String?
+    var url : String?
+    
+    init(title : String, description : String, author : String, urlToImage : String, url : String) {
+        self.title = title
+        self.description = description
+        self.author = author
+        self.urlToImage = urlToImage
+        self.url = url
+    }
 }
